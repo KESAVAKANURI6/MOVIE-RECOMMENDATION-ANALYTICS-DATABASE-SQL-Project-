@@ -25,13 +25,3 @@ CREATE TABLE ratings (
     rating DECIMAL(2,1),
     rated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE actors (
-    actor_id INT PRIMARY KEY,
-    actor_name VARCHAR(255)
-);
-CREATE TABLE movie_cast (
-    movie_id INT REFERENCES movies(movie_id),
-    actor_id INT REFERENCES actors(actor_id),
-    role VARCHAR(255),
-    PRIMARY KEY (movie_id, actor_id)
-);
